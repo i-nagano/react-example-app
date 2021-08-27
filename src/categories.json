@@ -1,0 +1,26 @@
+[
+    {
+        "categoryName": "総合",
+        "categoryId": "general"
+    },
+    {
+        "categoryName": "エンターテイメント",
+        "categoryId": "entertainment"
+    },
+    {
+        "categoryName": "スポーツ",
+        "categoryId": "sports"
+    },
+    {
+        "categoryName": "医療・ヘルスケア",
+        "categoryId": "health"
+    },
+    {
+        "categoryName": "サイエンス",
+        "categoryId": "science"
+    },
+    {
+        "categoryName": "テクノロジー",
+        "categoryId": "technology"
+    }
+]

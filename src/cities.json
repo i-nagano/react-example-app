@@ -1,0 +1,34 @@
+[
+    {
+        "cityName": "札幌",
+        "cityId": "016010"
+    },
+    {
+        "cityName": "仙台",
+        "cityId": "040010"
+    },
+    {
+        "cityName": "東京",
+        "cityId": "130010"
+    },
+    {
+        "cityName": "名古屋",
+        "cityId": "230010"
+    },
+    {
+        "cityName": "京都",
+        "cityId": "260010"
+    },
+    {
+        "cityName": "大阪",
+        "cityId": "270000"
+    },
+    {
+        "cityName": "広島",
+        "cityId": "340010"
+    },
+    {
+        "cityName": "福岡",
+        "cityId": "400010"
+    }
+]
