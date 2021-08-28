@@ -10,6 +10,7 @@ import './App.css';
 
 function App() {
   // Weather Forecasts
+  const titleWeather = 'Weather Forecast';
   const [city, setCity] = useState('016010');
   const [results, setResults] = useState({
     // 今日
@@ -130,6 +131,7 @@ function App() {
   };
   
   // Latest News
+  const titleNews = 'Latest News';
   const [category, setCategory] = useState('general');
   const [response, setResponse] = useState([]);
   const API_KEY = 'e76af48d19044e4e99a0a6ed768c4d0b';
@@ -148,10 +150,10 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route exact path={'/weather'}>
-              <WeatherPage citiesJson={citiesJson} city={city} setCity={setCity} results={results} getWeather={getWeather} />
+              <WeatherPage titleWeather={titleWeather} citiesJson={citiesJson} city={city} setCity={setCity} results={results} getWeather={getWeather} />
             </Route>
             <Route exact path={'/news'}>
-              <NewsPage categoriesJson={categoriesJson} response={response} setResponse={setResponse} category={category} setCategory={setCategory} getNews={getNews} />
+              <NewsPage titleNews={titleNews} categoriesJson={categoriesJson} response={response} setResponse={setResponse} category={category} setCategory={setCategory} getNews={getNews} />
             </Route>
             <Route exact path={'/'}>
               <TodoPage />

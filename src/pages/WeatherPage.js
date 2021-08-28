@@ -1,5 +1,5 @@
 import React from 'react';
-import TitleWeather from '../components/TitleWeather';
+import Title from '../components/Title';
 import SelectorCity from '../components/SelectorCity';
 import ResultsWeather from '../components/ResultsWeather';
 import Header from '../components/Header';
@@ -8,7 +8,7 @@ const WeatherPage = (props) => {
     return (
         <div>
             <Header />
-            <TitleWeather />
+            <Title titleWeather={props.titleWeather} />
             <SelectorCity citiesJson={props.citiesJson} city={props.city} setCity={props.setCity} getWeather={props.getWeather} />
             <ResultsWeather results={props.results} />
         </div>

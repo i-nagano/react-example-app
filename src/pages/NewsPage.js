@@ -1,16 +1,16 @@
 import React from 'react';
 import ResultsNews from '../components/ResultsNews';
 import SelectorCategory from '../components/SelectorCategory';
-import TitleNews from '../components/TitleNews';
+import Title from '../components/Title';
 import Header from '../components/Header';
 
 const NewsPage = (props) => {
     return (
         <div>
             <Header />
-            <TitleNews />
+            < Title titleNews={props.titleNews} />
             <SelectorCategory categoriesJson={props.categoriesJson} setResponse={props.setResponse} category={props.category} setCategory={props.setCategory} getNews={props.getNews} />
-            <ResultsNews response={props.response}/>
+            <ResultsNews response={props.response} />
         </div>
     )
 }
