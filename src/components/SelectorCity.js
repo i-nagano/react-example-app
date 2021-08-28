@@ -2,7 +2,7 @@ import React from 'react';
 
 const Selector = (props) => {
     return (
-        <div>
+        <div className="selector-container">
             <select onChange={(e) => props.setCity(e.target.value)} >
                 <option>地域を選択</option>
                 {props.citiesJson.map((city, index) => 

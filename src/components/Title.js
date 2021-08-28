@@ -2,7 +2,7 @@ import React from 'react';
 
 const Title = (props) => {
     return (
-        <div>
+        <div className="title">
             <h2>
                 <span>{props.titleWeather}</span>
                 <span>{props.titleNews}</span>

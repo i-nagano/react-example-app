@@ -2,7 +2,7 @@ import React from 'react';
 
 const SelectorCategory = (props) => {
     return (
-        <div>
+        <div className="selector-container">
             <select onChange={(e) => props.setCategory(e.target.value)}>
                 <option>カテゴリを選択</option>
                 {props.categoriesJson.map((category, index) =>

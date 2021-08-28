@@ -8,7 +8,7 @@ const NewsPage = (props) => {
     return (
         <div>
             <Header />
-            < Title titleNews={props.titleNews} />
+            <Title titleNews={props.titleNews} />
             <SelectorCategory categoriesJson={props.categoriesJson} setResponse={props.setResponse} category={props.category} setCategory={props.setCategory} getNews={props.getNews} />
             <ResultsNews response={props.response} />
         </div>
