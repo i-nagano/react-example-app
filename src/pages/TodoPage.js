@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import { db } from '../firebase';
 import Header from '../components/Header';
 import Title from '../components/Title';
 import TaskItem from '../components/TaskItem';
@@ -26,7 +24,7 @@ const TodoPage = (props) => {
             </button>
             <List>
                 {props.tasks.map((task) =>
-                <TaskItem key={task.id} id={task.id} title={task.title} setTitle={props.setTitle} editTitle={props.editTitle} deleteTask={props.deleteTask} />
+                <TaskItem key={task.id} id={task.id} title={task.title} />
                 )}
             </List>
         </div>
