@@ -7,7 +7,7 @@ import WeatherPage from './pages/WeatherPage';
 import NewsPage from './pages/NewsPage';
 import TodoPage from './pages/TodoPage';
 import './App.css';
-import { newsApi } from './newsApi';
+// import { newsApi } from './newsApi';
 
 function App() {
   // Weather Forecasts
@@ -146,6 +146,11 @@ function App() {
       });
   };
 
+  // Todo List
+  const titleTop = 'Todo List by React/Firestore';
+
+
+
     return (
       <div>
         <BrowserRouter>
@@ -157,7 +162,7 @@ function App() {
               <NewsPage titleNews={titleNews} categoriesJson={categoriesJson} response={response} setResponse={setResponse} category={category} setCategory={setCategory} getNews={getNews} />
             </Route>
             <Route exact path={'/'}>
-              <TodoPage />
+              <TodoPage titleTop={titleTop} />
             </Route>
           </Switch>
         </BrowserRouter>

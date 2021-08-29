@@ -10,7 +10,6 @@ const ResultsWeather = (props) => {
             {props.results.date_dayOne && <span>{props.results.date_dayOne}</span>}
             {props.results.dateLabel_dayOne && <span>（{props.results.dateLabel_dayOne}）</span>}
             </div>
-            <br />
             {<img className="card__weather__image" src={props.results.url_dayOne} width={props.results.width_dayOne} height={props.results.height_dayOne} alt={props.results.title_dayOne} />}
             <br />
             <div className="card__weather__title">
@@ -39,7 +38,6 @@ const ResultsWeather = (props) => {
             {props.results.date_dayTwo && <span>{props.results.date_dayTwo}</span>}
             {props.results.dateLabel_dayTwo && <span>（{props.results.dateLabel_dayTwo}）</span>}
             </div>
-            <br />
             {<img className="card__weather__image" src={props.results.url_dayTwo} width={props.results.width_dayTwo} height={props.results.height_dayTwo} alt={props.results.title_dayTwo} />}
             <br />
             <div className = "card__weather__title">
@@ -68,7 +66,6 @@ const ResultsWeather = (props) => {
             {props.results.date_dayThree && <span>{props.results.date_dayThree}</span>}
             {props.results.dateLabel_dayThree && <span>（{props.results.dateLabel_dayThree}）</span>}
             </div>
-            <br />
             {<img className="card__weather__image" src={props.results.url_dayThree} width={props.results.width_dayThree} height={props.results.height_dayThree} alt={props.results.title_dayThree} />}
             <br />
             <div className="card__weather__title">

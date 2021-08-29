@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase';
 import Header from '../components/Header';
-import TitleTop from '../components/TitleTop';
+import Title from '../components/Title';
 import TaskItem from '../components/TaskItem';
 import { FormControl, TextField, List } from '@material-ui/core';
 import AddToPhotosIcon from "@material-ui/icons/AddToPhotos";
@@ -28,7 +28,7 @@ const TodoPage = (props) => {
     return (
         <div>
             <Header />
-            <TitleTop titleTop ={props.titleTop} />
+            <Title titleTop ={props.titleTop} />
             <FormControl>
                 <TextField
                     InputLabelProps={{
@@ -51,6 +51,7 @@ const TodoPage = (props) => {
                     </div>
                 )}
                 {/* <TaskItem key={task.id} id={task.id} title={task.title} body={task.body} /> */}
+                <TaskItem />
             </List>
         </div>
     )
