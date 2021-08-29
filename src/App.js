@@ -150,17 +150,23 @@ function App() {
   const titleTop = 'Todo List by React/Firestore';
   const [tasks, setTasks] = useState([{ id:'', idNo: '', title: '', body: '' }]);
   const [inputTitle, setInputTitle] = useState('');
+  
   useEffect(() => {
       const unSub = db.collection('tasks').onSnapshot((snapshot) => {
           setTasks(
-              snapshot.docs.map((doc) => ({ id: doc.id, idNo: doc.data().id, title: doc.data().title, body: doc.data().body }))
+              snapshot.docs.map((doc) => ({ id: doc.id, idNo: doc.data().id, title: doc.data().title, body: doc.data().body, regist: doc.data().regist.toLocalString }))
           );
       });
       return () => unSub();
   }, []);
+
+  let newBody = '';
+  let newIdNo = tasks.length + 1;
+  let todayNow = new Date();
+
   const newTask = () => {
-      db.collection('tasks').add({ title: inputTitle });
-      setInputTitle("");
+      db.collection('tasks').add({ title: inputTitle, body: newBody, idNo: newIdNo, regist: todayNow});
+      setInputTitle('');
   };
 
     return (

@@ -7,7 +7,11 @@ import { db } from '../firebase';
 const TaskItem = (props) => {
     const [title, setTitle] = useState(props.title);
     const editTitle = () => {
-        db.collection('tasks').doc(props.id).set({title: title}, {merge: true});
+        db.collection('tasks').doc(props.id).set({ title: title }, { merge: true });
+    };
+    const [body, setBody] = useState(props.body);
+    const editBody = () => {
+        db.collection('tasks').doc(props.id).set({ body: body }, { merge: true });
     };
     const deleteTask = () => {
         db.collection('tasks').doc(props.id).delete();
@@ -16,8 +20,10 @@ const TaskItem = (props) => {
     return (
         <div>
             <ListItem>
-                <Grid container justify="center">
+                <Grid container justifyContent="center" alignItems="center">
+                    <Grid item xs={2}>
                     <TextField
+                    fullWidth
                     InputLabelProps={{
                         shrink:true
                     }}
@@ -25,7 +31,22 @@ const TaskItem = (props) => {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     />
+                    </Grid>
                     <button onClick={editTitle}>
+                        <EditOutlinedIcon />
+                    </button>
+                    <Grid item xs={4}>
+                    <TextField
+                    fullWidth
+                    InputLabelProps={{
+                        shrink:true
+                    }}
+                    label="Edit Comment"
+                    value={body}
+                    onChange={(e) => setBody(e.target.value)}
+                    />
+                    </Grid>
+                    <button onClick={editBody}>
                         <EditOutlinedIcon />
                     </button>
                     <button onClick={deleteTask} >

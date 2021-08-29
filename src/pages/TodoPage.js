@@ -1,14 +1,15 @@
 import Header from '../components/Header';
 import Title from '../components/Title';
 import TaskItem from '../components/TaskItem';
-import { FormControl, TextField, List } from '@material-ui/core';
+import { Grid, FormControl, TextField, List } from '@material-ui/core';
 import AddToPhotosIcon from "@material-ui/icons/AddToPhotos";
 
 const TodoPage = (props) => {
     return (
         <div>
             <Header />
-            <Title titleTop ={props.titleTop} />
+            <Title titleTop={props.titleTop} />
+            <Grid container justifyContent="center" alignItems = "center">
             <FormControl>
                 <TextField
                     InputLabelProps={{
@@ -22,9 +23,10 @@ const TodoPage = (props) => {
             <button disabled={!props.inputTitle} onClick={props.newTask}>
                 <AddToPhotosIcon />
             </button>
+            </Grid>
             <List>
                 {props.tasks.map((task) =>
-                <TaskItem key={task.id} id={task.id} title={task.title} />
+                <TaskItem key={task.id} id={task.id} title={task.title} body={task.body} />
                 )}
             </List>
         </div>
