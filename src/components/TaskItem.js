@@ -7,7 +7,7 @@ import { db } from '../firebase';
 
 const TaskItem = (props) => {
     const [title, setTitle] = useState(props.title);
-    const editTitle =() => {
+    const editTitle = () => {
         db.collection('tasks').doc(props.id).set({title: title}, {merge: true});
     };
     const deleteTask = () => {
@@ -17,13 +17,12 @@ const TaskItem = (props) => {
     return (
         <div>
             <ListItem>
-                <h2>{props.title}</h2>
                 <Grid container justify="center">
                     <TextField
                     InputLabelProps={{
                         shrink:true
                     }}
-                    label="Edit to Title"
+                    label="Edit Task"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     />

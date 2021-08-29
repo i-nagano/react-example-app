@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import axios from 'axios';
+import { db } from './firebase';
 import citiesJson from './cities.json';
 import categoriesJson from './categories.json';
 import WeatherPage from './pages/WeatherPage';
 import NewsPage from './pages/NewsPage';
 import TodoPage from './pages/TodoPage';
 import './App.css';
-// import { newsApi } from './newsApi';
 
 function App() {
   // Weather Forecasts
@@ -148,8 +148,20 @@ function App() {
 
   // Todo List
   const titleTop = 'Todo List by React/Firestore';
-
-
+  const [tasks, setTasks] = useState([{ id:'', idNo: '', title: '', body: '' }]);
+  const [inputTitle, setInputTitle] = useState('');
+  useEffect(() => {
+      const unSub = db.collection('tasks').onSnapshot((snapshot) => {
+          setTasks(
+              snapshot.docs.map((doc) => ({ id: doc.id, idNo: doc.data().id, title: doc.data().title, body: doc.data().body }))
+          );
+      });
+      return () => unSub();
+  }, []);
+  const newTask = () => {
+      db.collection('tasks').add({ title: inputTitle });
+      setInputTitle("");
+  };
 
     return (
       <div>
@@ -162,7 +174,7 @@ function App() {
               <NewsPage titleNews={titleNews} categoriesJson={categoriesJson} response={response} setResponse={setResponse} category={category} setCategory={setCategory} getNews={getNews} />
             </Route>
             <Route exact path={'/'}>
-              <TodoPage titleTop={titleTop} />
+              <TodoPage titleTop={titleTop} tasks={tasks} inputTitle={inputTitle} setInputTitle={setInputTitle} newTask={newTask} />
             </Route>
           </Switch>
         </BrowserRouter>
