@@ -7,6 +7,7 @@ import WeatherPage from './pages/WeatherPage';
 import NewsPage from './pages/NewsPage';
 import TodoPage from './pages/TodoPage';
 import './App.css';
+import { newsApi } from './newsApi';
 
 function App() {
   // Weather Forecasts
