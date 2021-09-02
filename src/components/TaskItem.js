@@ -30,11 +30,12 @@ const TaskItem = (props) => {
                     label="Edit Title"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
+                    onBlur={editTitle}
                     />
                     </Grid>
-                    <button onClick={editTitle}>
+                    {/* <button onClick={editTitle}>
                         <EditOutlinedIcon />
-                    </button>
+                    </button> */}
                     <Grid item xs={4}>
                     <TextField
                     fullWidth
@@ -44,11 +45,12 @@ const TaskItem = (props) => {
                     label="Edit Comment"
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
+                    onBlur={editBody}
                     />
                     </Grid>
-                    <button onClick={editBody}>
+                    {/* <button onClick={editBody}>
                         <EditOutlinedIcon />
-                    </button>
+                    </button> */}
                     <button onClick={deleteTask} >
                         <DeleteOutlineOutlinedIcon />
                     </button>
