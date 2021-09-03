@@ -26,7 +26,7 @@ const TodoPage = (props) => {
             </Grid>
             <List>
                 {props.tasks.map((task) =>
-                <TaskItem key={task.id} id={task.id} title={task.title} body={task.body} />
+                <TaskItem key={task.id} id={task.id} idNo={task.idNo} title={task.title} body={task.body} regist={task.regist} />
                 )}
             </List>
         </div>

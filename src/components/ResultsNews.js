@@ -8,7 +8,7 @@ const ResultsNews = (props) => {
                 <div className="card__news__body">
                     <h3 className="card__news__title">{singleData.title}</h3>
                     <p className="card__news__excerpt">{singleData.description}</p>
-                    <p className="card__news__excerpt"><a href={singleData.url}>{singleData.url}</a></p>
+                    <p className="card__news__excerpt"><a href={singleData.url} target="_blank" rel="noopener noreferrer">{singleData.url}</a></p>
                     <p className="card__news__excerpt">
                         <span>{singleData.author}</span> | 
                         <span> {singleData.source.name}</span> | 

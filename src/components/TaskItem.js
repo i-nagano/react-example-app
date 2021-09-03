@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ListItem, TextField, Grid } from '@material-ui/core';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
-import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
+// import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import { db } from '../firebase';
 
 const TaskItem = (props) => {
